@@ -5,7 +5,8 @@ buildscript {
     dependencies {
         // for spring boot
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.1.RELEASE")
-
+        // for unit test code coverage  -- need to find a way to put it in its file
+        classpath('com.palantir:jacoco-coverage:0.4.0')
     }
 }
 
@@ -76,24 +77,20 @@ dependencies {
 
 apply plugin: 'jacoco'
 test.useTestNG()
-task codeCoverageReport(type: JacocoReport) {
-    executionData fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec")
+//task codeCoverageReport(type: JacocoReport) {
+//    executionData fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec")
 
-    subprojects.each {
-        sourceSets it.sourceSets.main
-    }
+//    subprojects.each {
+//        sourceSets it.sourceSets.main
+//    }
 
-    reports {
-        xml.enabled true
-        xml.destination "${buildDir}/reports/jacoco/report.xml"
-        html.enabled false
-        csv.enabled false
-    }
-}
-
-codeCoverageReport.dependsOn {
-    test
-}
+//    reports {
+//        xml.enabled true
+//        xml.destination "${buildDir}/reports/jacoco/report.xml"
+//        html.enabled false
+//        csv.enabled false
+//    }
+//}
 
 mainClassName = 'com.umasuo.Application'
 

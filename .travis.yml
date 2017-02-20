@@ -6,3 +6,6 @@ services:
 script:
   - gradle clean
   - gradle wrapper
+  - ./gradlew codeCoverageReport
+after_success:
+  - bash <(curl -s https://codecov.io/bash)

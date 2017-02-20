@@ -88,7 +88,7 @@ dependencies {
 }
 
 // build docker image task
-apply from: '../docker_build.gradle'
+apply from: 'docker_build.gradle'
 
 // Specify the gradle wrapper version, all use 3.0
 task wrapper(type: Wrapper) {

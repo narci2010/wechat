@@ -64,10 +64,7 @@ public class WechatController {
     } catch (Exception e) {
       LOG.error(e.getMessage(), e);
     }
-    LOG.error(
-        "Verify failed.",
-        timestamp, nonce, signature, echoStr, applicationConfig.getWechatToken());
-    return "";
+    return result;
   }
 
   /**

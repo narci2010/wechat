@@ -1,5 +1,7 @@
 package com.umasuo.wechat.application.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
@@ -13,13 +15,18 @@ public class TokenUpdater {
   /**
    * 在token过期前12分钟去重新取token.
    */
-  private static transient long TIME_BEFORE_EXPIRED= 720000;
+  private static transient long TIME_BEFORE_EXPIRED = 720000;
+
+  /**
+   * LOG.
+   */
+  private static Logger LOG = LoggerFactory.getLogger(TokenUpdater.class);
 
   /**
    * 每10分钟检查一下token的有效性, 10分钟与12分钟是为了避免出现token过期却没被更新的错误.
    */
   @Scheduled(fixedRate = 600000)
-  public void executor(){
-
+  public void executor() {
+    
   }
 }

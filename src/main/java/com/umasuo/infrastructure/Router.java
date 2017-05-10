@@ -13,5 +13,5 @@ public final class Router {
 
 
   public static final String ROOT = "/";
-
+  public static final String CART_HEALTH_CHECK = ROOT + "health";
 }

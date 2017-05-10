@@ -2,9 +2,11 @@ package com.umasuo.wechat.application.controller;
 
 import com.umasuo.wechat.application.model.WechatRequest;
 import com.umasuo.wechat.infrastructure.Router;
+import com.umasuo.wechat.infrastructure.service.ServiceLocator;
 import com.umasuo.wechat.infrastructure.utils.WechatRequestResolver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,7 +26,14 @@ public class WechatController {
   private static Logger LOG = LoggerFactory.getLogger(WechatController.class);
 
   /**
+   * service locator.
+   */
+  @Autowired
+  private transient ServiceLocator serviceLocator;
+
+  /**
    * the unique entrance of wechat request.
+   *
    * @param request
    * @param response
    */
@@ -37,6 +46,7 @@ public class WechatController {
 
       WechatRequest weChatRequest = WechatRequestResolver.resolve(request);
       LOG.info("Enter. wechatRequest: {}", weChatRequest);
+      serviceLocator.getService(weChatRequest).handle(weChatRequest, response);
 //      String serviceId = this.getServiceId(weChatRequest);
 //      WechatService service = map.get(serviceId);
 //      service.handle(weChatRequest, response);

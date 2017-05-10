@@ -8,7 +8,10 @@ import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletResponse;
 
-@Service
+/**
+ * subscribe service, used to handler subscribe messages.
+ */
+@Service(value = "subscribe")
 public class SubscribeService implements WechatService {
 
   private static Logger LOG = LoggerFactory.getLogger(SubscribeService.class);

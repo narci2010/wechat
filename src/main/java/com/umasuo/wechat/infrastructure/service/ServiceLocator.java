@@ -1,16 +1,21 @@
 package com.umasuo.wechat.infrastructure.service;
 
 import com.umasuo.wechat.application.model.WechatRequest;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
 
 /**
- * wecaht service locator.
+ * wecaht service locator. used to find service for handler wechat request.
  * Created by umasuo on 17/5/10.
  */
 @Service
 public class ServiceLocator {
 
+  /**
+   * the application context.
+   */
+  @Autowired
   private transient ApplicationContext context;
 
   /**

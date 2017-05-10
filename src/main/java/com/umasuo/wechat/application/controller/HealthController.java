@@ -1,6 +1,6 @@
-package com.umasuo.application.controller;
+package com.umasuo.wechat.application.controller;
 
-import com.umasuo.infrastructure.Router;
+import com.umasuo.wechat.infrastructure.Router;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.GetMapping;

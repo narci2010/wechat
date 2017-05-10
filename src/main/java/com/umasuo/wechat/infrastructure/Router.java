@@ -1,4 +1,4 @@
-package com.umasuo.infrastructure;
+package com.umasuo.wechat.infrastructure;
 
 /**
  * Created by umasuo on 17/5/9.

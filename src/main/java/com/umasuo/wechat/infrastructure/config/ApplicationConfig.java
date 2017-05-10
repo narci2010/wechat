@@ -1,4 +1,4 @@
-package com.umasuo.infrastructure.config;
+package com.umasuo.wechat.infrastructure.config;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
@@ -14,6 +14,6 @@ public class ApplicationConfig {
   /**
    * wechat token.
    */
-  @Value("${wechat_token:umasuo_token}")
+  @Value("${wechat.token}")
   public String wechatToken;
 }

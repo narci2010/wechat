@@ -1,20 +1,22 @@
-package com.umasuo.application.controller;
+package com.umasuo.wechat.application.controller;
 
-import com.umasuo.infrastructure.Router;
-import com.umasuo.infrastructure.config.ApplicationConfig;
-import com.umasuo.infrastructure.utils.ByteUtils;
+import com.umasuo.wechat.infrastructure.Router;
+import com.umasuo.wechat.infrastructure.config.ApplicationConfig;
+import com.umasuo.wechat.infrastructure.utils.ByteUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Arrays;
 
 /**
  * Created by umasuo on 17/5/9.
  */
+@RestController
 public class WechatController {
 
   /**

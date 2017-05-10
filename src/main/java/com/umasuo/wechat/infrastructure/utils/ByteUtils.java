@@ -1,4 +1,4 @@
-package com.umasuo.infrastructure.utils;
+package com.umasuo.wechat.infrastructure.utils;
 
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;

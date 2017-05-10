@@ -17,18 +17,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Data
 public class WechatRequest {
 
-  public static final String MSG_TYPE_DEVICE_EVENT = "device_event";
-  public static final String MSG_TYPE_DEVICE_TEXT = "device_text";
-  public static final String MSG_TYPE_CUSTOMER_SERVICE = "transfer_customer_service";
-  public static final String MSG_TYPE_EVENT = "event";
-  public static final String MSG_TYPE_TEXT = "text";
-  public static final String MSG_EVENT_SUBSCRIBE = "subscribe";
-  public static final String MSG_EVENT_UNSUBSCRIBE = "unsubscribe";
-  public static final String MSG_EVENT_CLICK = "CLICK";
-  public static final String MSG_DEVICE_EVENT_BIND = "bind";
-  public static final String MSG_DEVICE_EVENT_UNBIND = "unbind";
-  public static final String MSG_DEFAULT = "default";
-
   @XmlElement(name = "ToUserName")
   private String toUserName;
 

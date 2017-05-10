@@ -47,9 +47,6 @@ public class WechatController {
       WechatRequest weChatRequest = WechatRequestResolver.resolve(request);
       LOG.info("Enter. wechatRequest: {}", weChatRequest);
       serviceLocator.getService(weChatRequest).handle(weChatRequest, response);
-//      String serviceId = this.getServiceId(weChatRequest);
-//      WechatService service = map.get(serviceId);
-//      service.handle(weChatRequest, response);
 
     } catch (Exception e) {
       LOG.error(e.getMessage(), e);

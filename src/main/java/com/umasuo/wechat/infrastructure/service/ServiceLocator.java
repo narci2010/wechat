@@ -37,23 +37,23 @@ public class ServiceLocator {
    */
   private String getServiceId(WechatRequest weChatRequest) {
     switch (weChatRequest.getMsgType()) {
-      case WechatRequest.MSG_TYPE_EVENT:
-      case WechatRequest.MSG_TYPE_DEVICE_EVENT: {
+      case RequestTypes.MSG_TYPE_EVENT:
+      case RequestTypes.MSG_TYPE_DEVICE_EVENT: {
         switch (weChatRequest.getEvent()) {
-          case WechatRequest.MSG_EVENT_SUBSCRIBE:
-          case WechatRequest.MSG_EVENT_UNSUBSCRIBE:
-          case WechatRequest.MSG_DEVICE_EVENT_BIND:
-          case WechatRequest.MSG_DEVICE_EVENT_UNBIND:
+          case RequestTypes.MSG_EVENT_SUBSCRIBE:
+          case RequestTypes.MSG_EVENT_UNSUBSCRIBE:
+          case RequestTypes.MSG_DEVICE_EVENT_BIND:
+          case RequestTypes.MSG_DEVICE_EVENT_UNBIND:
             return weChatRequest.getEvent();
-          case WechatRequest.MSG_EVENT_CLICK:
+          case RequestTypes.MSG_EVENT_CLICK:
             return weChatRequest.getEventKey();
           default:
             return "default";
         }
       }
-      case WechatRequest.MSG_TYPE_TEXT:
+      case RequestTypes.MSG_TYPE_TEXT:
         return weChatRequest.getMsgType();
-      case WechatRequest.MSG_TYPE_DEVICE_TEXT:
+      case RequestTypes.MSG_TYPE_DEVICE_TEXT:
       default:
         return "default";
     }

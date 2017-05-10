@@ -6,18 +6,18 @@ logging:
     com.netflix.discovery: 'OFF'
     org.springframework.cloud: 'DEBUG'
 
-#
-#spring:
-#  datasource:
-#    url: jdbc:postgresql://localhost:5432/wechat
-#    username: postgres
-#    password: root
-#    driver-class-name: org.postgresql.Driver
-#  jpa:
-#    database-platform: com.umasuo.database.dialect.JSONBPostgreSQLDialect
-#    show-sql: false
-#    hibernate:
-#      ddl-auto: update
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/wechat
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: com.umasuo.database.dialect.JSONBPostgreSQLDialect
+    show-sql: false
+    hibernate:
+      ddl-auto: update
 
 wechat:
   token: wechat_token
